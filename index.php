@@ -20,6 +20,7 @@ $datos = $conn->query($sql);
                 <th scope="col">ci</th>
                 <th scope="col">nombre</th>
                 <th scope="col">correo</th>
+                <th scope="col">acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,10 @@ $datos = $conn->query($sql);
                         <td><?= $fila["ci"] ?></td>
                         <td><?= $fila["nombre"] ?></td>
                         <td><?= $fila["correo"] ?></td>
+                        <td>
+                            <a class="btn btn-success" href="./formulario.php?ci=<?= $fila["ci"] ?>" role="button">Editar</a>
+                            <a class="btn btn-danger" href="./eliminar.php?ci=<?= $fila["ci"] ?>" role="button">Eliminar</a>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
                 <?php else:
@@ -37,10 +42,6 @@ $datos = $conn->query($sql);
             <?php endif; ?>
         </tbody>
     </table>
-
-            
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
 
